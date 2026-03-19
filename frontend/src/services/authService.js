@@ -13,8 +13,10 @@ export const register = async (userData) => {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
+        'Accept': 'application/json',
       },
       body: JSON.stringify(userData),
+      mode: 'cors',
     });
     
     // Log the raw response for debugging
@@ -46,8 +48,10 @@ export const login = async (credentials) => {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
+        'Accept': 'application/json',
       },
       body: JSON.stringify(credentials),
+      mode: 'cors',
     });
     
     console.log('Login raw response:', response);

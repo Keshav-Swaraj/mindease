@@ -41,13 +41,39 @@ const SignUpPage = () => {
       return;
     }
 
-    // Manually navigate to login page after a delay
-    // This is a temporary fix until the API connection is resolved
-    setTimeout(() => {
+    try {
+      // Direct fetch implementation with proper CORS settings
+      const response = await fetch('http://localhost:8000/api/auth/register', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+        },
+        mode: 'cors',
+        body: JSON.stringify(formData)
+      });
+      
+      console.log('Registration response status:', response.status);
+      
+      if (!response.ok) {
+        let errorMessage = 'Registration failed';
+        try {
+          const errorData = await response.json();
+          errorMessage = errorData.detail || errorMessage;
+        } catch (e) {
+          console.error('Error parsing error response:', e);
+        }
+        throw new Error(errorMessage);
+      }
+      
       setIsLoading(false);
       alert('Account created successfully! Please log in.');
       navigate('/login');
-    }, 1500);
+    } catch (error) {
+      console.error('Registration error:', error);
+      setIsLoading(false);
+      setError(error.message || 'Registration failed. Please try again.');
+    }
   };
 
   return (

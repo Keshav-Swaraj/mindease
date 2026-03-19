@@ -8,15 +8,16 @@ export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
 
+  // Check authentication on load
   useEffect(() => {
-    // Check if user is authenticated on initial load
-    const checkAuth = async () => {
-      if (isAuthenticated()) {
-        setUser({ token: getToken() });
+    const checkAuth = () => {
+      const token = getToken();
+      if (token) {
+        setUser({ token });
       }
       setLoading(false);
     };
-
+    
     checkAuth();
   }, []);
 

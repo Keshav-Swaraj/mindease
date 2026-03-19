@@ -7,6 +7,7 @@ import DashboardPage from './pages/DashboardPage';
 import ResourcesPage from './pages/ResourcesPage';
 import ProfilePage from './pages/ProfilePage';
 import ChatPage from './pages/ChatPage';
+import JournalPage from './pages/JournalPage';
 import Layout from './components/Layout';
 import SignUpPage from './pages/SignUpPage';
 
@@ -15,7 +16,7 @@ const ProtectedRoute = ({ children }) => {
   const { user, loading } = useAuth();
   
   if (loading) {
-    return <div className="loading">Loading...</div>;
+    return <div className="flex items-center justify-center h-screen">Loading...</div>;
   }
   
   if (!user) {
@@ -53,6 +54,11 @@ function AppRoutes() {
       <Route path="/profile" element={
         <ProtectedRoute>
           <Layout><ProfilePage /></Layout>
+        </ProtectedRoute>
+      } />
+      <Route path="/journal" element={
+        <ProtectedRoute>
+          <Layout><JournalPage /></Layout>
         </ProtectedRoute>
       } />
     </Routes>

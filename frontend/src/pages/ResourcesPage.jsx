@@ -8,8 +8,8 @@ import HelpCard from '../components/HelpCard';
 
 // Import your placeholder images
 import anxietyImg from '../assets/article-anxiety.jpg';
-import meditationImg from '../assets/article-meditation.jpg';
-import sleepImg from '../assets/article-sleep.jpg';
+import meditationImg from '../assets/article-anxiety.jpg';
+import sleepImg from '../assets/article-anxiety.jpg';
 
 // Dummy data for the page
 const articlesData = [

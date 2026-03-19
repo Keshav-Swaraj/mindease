@@ -27,14 +27,16 @@ const LoginPage = () => {
     setError('');
     setIsLoading(true);
 
-    // Temporary fix: Simulate successful login after a delay
-    setTimeout(() => {
+    try {
+      // Call the login function from authService
+      await login(formData);
       setIsLoading(false);
-      // Store a mock token in localStorage to simulate authentication
-      localStorage.setItem('token', 'mock_token_for_testing');
       // Navigate to dashboard
       navigate('/dashboard');
-    }, 1500);
+    } catch (error) {
+      setIsLoading(false);
+      setError(error.message || 'Login failed. Please check your credentials.');
+    }
   };
 
   return (
