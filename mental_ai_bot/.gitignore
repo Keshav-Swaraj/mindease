@@ -1,0 +1,93 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environment variables and virtualenvs
+.env
+.env.*
+venv/
+.venv/
+env/
+ENV/
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Logs and debug
+*.log
+*.pot
+*.pyc
+*.pyo
+*.pyd
+*.pdb
+*.tmp
+*.bak
+*.old
+*.orig
+*.rej
+.DS_Store
+Thumbs.db
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+simple_test.py
+
+
+
+
+# Docker
+*.pid
+*.seed
+*.pid.lock
+.dockerignore
+
+# Ignore local config
+
+mental_health_api.log
+
+# Jupyter Notebooks
+.ipynb_checkpoints
+
+# Frontend (if you later connect Vite/React)
+node_modules/
+dist/
+*.lock
+
+# Others
+README.md~
